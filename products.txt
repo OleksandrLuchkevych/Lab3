@@ -1,0 +1,3 @@
+fish, 12, 50
+vegetables, 19, 5
+water, 1.5, 5
