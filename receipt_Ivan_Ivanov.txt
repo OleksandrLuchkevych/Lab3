@@ -1,7 +1,0 @@
-Receipt: 2021-10-10
-Customer: Ivan Ivanov
-Products:
-Comments:
-Total price: 0.0
-Paid: true
-------------------------------
