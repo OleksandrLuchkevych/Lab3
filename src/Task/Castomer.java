@@ -5,7 +5,7 @@ public class Castomer {
     private String name;
     private String surname;
 
-    public Castomer(String name, String surname) {
+    public Castomer(final String name, final String surname) {
         this.name = name;
         this.surname = surname;
     }
@@ -18,11 +18,11 @@ public class Castomer {
         return this.surname;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
-    public void setSurname(String surname) {
+    public void setSurname(final String surname) {
         this.surname = surname;
     }
 }

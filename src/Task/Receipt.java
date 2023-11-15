@@ -12,7 +12,7 @@ public class Receipt {
 
     private LocalDate date;
 
-    public Receipt(Castomer castomer, List<Product> products, LocalDate date) {
+    public Receipt(final Castomer castomer, final List<Product> products, final LocalDate date) {
         this.castomer = castomer;
         this.products = products;
         this.isPaid = false;
@@ -27,7 +27,7 @@ public class Receipt {
         return castomer;
     }
 
-    public void setCastomer(Castomer castomer) {
+    public void setCastomer(final Castomer castomer) {
         this.castomer = castomer;
     }
 
@@ -35,7 +35,7 @@ public class Receipt {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(final List<Product> products) {
         this.products = products;
     }
 
@@ -43,7 +43,7 @@ public class Receipt {
         return isPaid;
     }
 
-    public void setPaid(boolean paid) {
+    public void setPaid(final boolean paid) {
         isPaid = paid;
     }
 
@@ -51,7 +51,7 @@ public class Receipt {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(final LocalDate date) {
         this.date = date;
     }
 
@@ -75,7 +75,7 @@ public class Receipt {
     }
 
 
-    public void editReceipt(Castomer newCustomer, List<Product> newProducts, LocalDate newDate) {
+    public void editReceipt(final Castomer newCustomer, final List<Product> newProducts, final LocalDate newDate) {
         if (!isPaid) {
             this.castomer = newCustomer;
             this.products = newProducts;

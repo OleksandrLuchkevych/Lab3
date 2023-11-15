@@ -16,17 +16,17 @@ public class Market {
     private List<Receipt> receipts = new ArrayList<>();
 
 
-    public Product addProduct(Product product) {
+    public Product addProduct(final Product product) {
         products.add(product);
         return product;
     }
 
-    public boolean isAvailable(Product product, int quantity) {
+    public boolean isAvailable(final Product product, final int quantity) {
         return products.stream()
                 .anyMatch(e -> e.getName().equals(product.getName()) && e.getQuantity() >= quantity);
     }
 
-    public Product sellProduct(Product product, int quantity) throws ProductNotFoundException, ProductNotAvailableException {
+    public Product sellProduct(final Product product, final int quantity) throws ProductNotFoundException, ProductNotAvailableException {
         if (isAvailable(product, quantity)) {
             products = products.stream()
                     .map(e -> e.getName().equals(product.getName()) ?
@@ -39,7 +39,7 @@ public class Market {
         return product;
     }
 
-    public Product buyProduct(Product product, int quantity) throws ProductNotFoundException, ProductNotAvailableException {
+    public Product buyProduct(final Product product, final int quantity) throws ProductNotFoundException, ProductNotAvailableException {
         if (isAvailable(product, quantity)) {
             products = products.stream()
                     .map(e -> e.getName().equals(product.getName()) ?
@@ -52,7 +52,7 @@ public class Market {
         return product;
     }
 
-    public void editProduct(Product product1, Product product2) {
+    public void editProduct(final Product product1, final Product product2) {
         products.remove(product1);
         products.add(product2);
     }
@@ -68,13 +68,13 @@ public class Market {
     }
 
     public void averagePrice() {
-        double averagePrice = products.stream()
+        final double averagePrice = products.stream()
                 .mapToDouble(e -> e.getPrice() * e.getQuantity())
                 .sum() / countProducts();
         System.out.println("Average price: " + averagePrice);
     }
 
-    public void filterByPrice(double price) {
+    public void filterByPrice(final double price) {
         products.stream()
                 .filter(e -> e.getPrice() < price)
                 .forEach(e -> System.out.println(e.getName() + " " + e.getPrice()));
